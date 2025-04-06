@@ -7,7 +7,7 @@ import (
 )
 
 var Enable bool = true
-var Debug bool = true
+var Debug bool = false
 
 var Enable_Yangshi bool = true
 var Enable_Weishi bool = true
