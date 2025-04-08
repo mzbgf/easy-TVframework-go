@@ -4,11 +4,12 @@ FROM --platform=$BUILDPLATFORM golang:1.23 AS builder
 # Set the Go working directory
 WORKDIR /app
 
-# Copy go.mod and go.sum files for dependency management optimization
-COPY go.mod go.sum ./
+# Copy go.mod file first
+COPY go.mod ./
 
-# Download dependencies
+# Initialize go.mod and download dependencies
 RUN go mod download
+RUN go mod tidy
 
 # Copy source code
 COPY . .
