@@ -10,6 +10,7 @@ COPY go.mod ./
 # Initialize go.mod and download dependencies
 RUN go mod download
 RUN go mod tidy
+RUN go get github.com/gin-gonic/gin
 
 # Copy source code
 COPY . .
